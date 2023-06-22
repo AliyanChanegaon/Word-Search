@@ -27,8 +27,7 @@ const GridBox = () => {
     const characters = "abcdefghijklmnopqrstuvwxyz";
     return characters.charAt(Math.floor(Math.random() * characters.length));
   };
-
-  return (
+   return (
     <Stack width="90%" height="100%" m={1} justify="center" align="center">
       <Grid
         templateColumns={`repeat(${gridSize.column}, 1fr)`}
