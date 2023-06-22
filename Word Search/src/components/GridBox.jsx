@@ -11,6 +11,7 @@ const GridBox = () => {
     word,
     setWord,
     elementsData,
+    setelementsData,
     createGrid,
     setcreateGrid,
     setGridSize,
@@ -28,14 +29,14 @@ const GridBox = () => {
   };
 
   return (
-    <Stack width="90%">
+    <Stack width="90%" height="100%" m={1} justify="center" align="center">
       <Grid
         templateColumns={`repeat(${gridSize.column}, 1fr)`}
         placeItems="center"
-        gap={1}
-        margin={5}
-        borderRadius={0}
-      
+        gap={2}
+        margin={1}
+        h="70%"
+        placeContent="center"
       >
         {gridData.map((row, rowIndex) =>
           row.map((value, columnIndex) => (
@@ -60,7 +61,8 @@ const GridBox = () => {
                   ? "black"
                   : "white"
               }
-              p={5}
+              padding="10px"
+              fontSize="xl"
               textAlign="center"
               name={`${rowIndex}-${columnIndex}`}
             />
@@ -69,7 +71,13 @@ const GridBox = () => {
       </Grid>
 
       {gridData.length !== 0 && (
-        <VStack margin="auto" justify="center" align="center">
+        <VStack
+          spacing={3}
+          w="100%"
+          margin="auto"
+          justify="center"
+          align="center"
+        >
           {createGrid === false ? (
             <>
               <Button
@@ -78,9 +86,12 @@ const GridBox = () => {
                 bg="white"
                 onClick={() => {
                   setcreateGrid(true);
-                  
                 }}
-                 isDisabled={gridData.flat().some(value => value === "") ? true : false}
+                isDisabled={
+                  gridData.flat().some((value) => value === "") ? true : false
+                }
+                size="lg"
+                fontSize="2xl"
               >
                 Set Grid
               </Button>
@@ -91,6 +102,8 @@ const GridBox = () => {
                 colorScheme="yellow"
                 bg="yellow.500"
                 _hover={{ backgroundColor: "yellow.600" }}
+                size="lg"
+                fontSize="2xl"
               >
                 Fill randomly
               </Button>
@@ -104,6 +117,8 @@ const GridBox = () => {
                 onChange={(e) => setWord(e.target.value)}
                 placeholder="Enter word to search"
                 width="100%"
+                size="lg"
+                fontSize="2xl"
               />
               <Input
                 width="100%"
@@ -114,6 +129,9 @@ const GridBox = () => {
                 type="submit"
                 onClick={HandlingSearch}
                 value="Search word"
+                size="lg"
+                mt="5px"
+                fontSize="2xl"
               />
               <Input
                 width="100%"
@@ -121,10 +139,13 @@ const GridBox = () => {
                 bg="white"
                 type="submit"
                 value="Reset"
+                size="lg"
+                fontSize="2xl"
                 onClick={() => {
                   setGridData([]);
                   setcreateGrid(false);
                   setGridSize({ row: "", column: "" });
+                  setelementsData([]);
                 }}
               />
             </>

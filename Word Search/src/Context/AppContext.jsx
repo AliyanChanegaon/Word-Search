@@ -45,7 +45,6 @@ export default function AppContextProvider({ children }) {
       }
 
       setelementsData([...elements]);
-    
     } else {
       let find = word;
       let Q = matrix.map((el) => el.join(""));
@@ -163,6 +162,7 @@ export default function AppContextProvider({ children }) {
         word,
         setWord,
         elementsData,
+        setelementsData,
         createGrid,
         setcreateGrid,
         isError,
