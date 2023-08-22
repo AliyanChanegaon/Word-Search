@@ -29,9 +29,6 @@
 <br />
 
 
-
-Bewakoof.com Clone is ReactJS e-commerce web application that allows you to buy shoes & clothes online with payment gateway integration. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
-<p align="center">
 <img src="https://i.ibb.co/Wss1fRS/first.png" width="200px" align="center" />
 </p>
 
